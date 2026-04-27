@@ -11,7 +11,7 @@ function Home() {
 			<section className="hero">
 				<div className="copy">
 					<h1>
-						The Regestry for <br />
+						The Registry for <br />
 						<span className="text-gradient">Agentic Intelligence</span>
 					</h1>
 					<p>

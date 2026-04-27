@@ -1,11 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import {
 	ArrowBigUp,
-	ArrowUp,
 	ArrowUpRight,
 	Bookmark,
 	Check,
-	CheckCircle2,
 	Copy,
 	MessageSquare,
 } from "lucide-react";
@@ -62,7 +60,7 @@ const SkillCard = ({
 					<div className="author">
 						<img src="/logo512.png" alt="author avatar" className="avatar" />
 						<div className="author-copy">
-							<p>Adrian</p>
+							<p>{authorEmail?.split("@")[0] ?? "Anonymous"}</p>
 							<p>{formattedDate}</p>
 						</div>
 					</div>
