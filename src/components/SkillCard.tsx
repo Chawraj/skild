@@ -24,14 +24,20 @@ const SkillCard = ({
 
 	const copyCommand = async () => {
 		if (!installCommand) return;
-
-		await navigator.clipboard.writeText(installCommand);
-		setIsCopied(true);
-
+		try {
+			await navigator.clipboard.writeText(installCommand);
+			setIsCopied(true);
+		} catch {
+			return;
+		}
 		setTimeout(() => {
 			setIsCopied(false);
 		}, 2000);
 	};
+
+	const formattedDate = createdAt
+		? new Date(createdAt).toLocaleDateString()
+		: "Unbekanntes Datum";
 
 	return (
 		<article className="skill-card">
@@ -57,7 +63,7 @@ const SkillCard = ({
 						<img src="/logo512.png" alt="author avatar" className="avatar" />
 						<div className="author-copy">
 							<p>Adrian</p>
-							<p>{new Date(createdAt as string).toLocaleDateString()}</p>
+							<p>{formattedDate}</p>
 						</div>
 					</div>
 					<div className="category">{category}</div>
